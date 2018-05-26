@@ -1,4 +1,4 @@
-# Fasta reader only files added
+# Main reader, no tests added
 #
 
 

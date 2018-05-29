@@ -15,6 +15,7 @@ class Fasta:
             else:
                 # Concatenate the line to the last value of the last list
                 pairs[1] = pairs[1] + line
+        main_list_sequences.append(pairs)
         main_list_sequences.pop(0)
         fasta_file.close()
         return main_list_sequences

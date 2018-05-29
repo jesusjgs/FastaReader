@@ -7,7 +7,8 @@ class Fasta:
         fasta_file = open(file_name, 'r')
         main_list_sequences = []
         pairs = []
-        for line in fasta_file:
+        line = fasta_file.readline()
+        while line:
             if line[0] == '>':
                 # Create new list pair with this line as id
                 main_list_sequences.append(pairs)
@@ -15,6 +16,7 @@ class Fasta:
             else:
                 # Concatenate the line to the last value of the last list
                 pairs[1] = pairs[1] + line
+            line = fasta_file.readline()
         main_list_sequences.append(pairs)
         main_list_sequences.pop(0)
         fasta_file.close()
